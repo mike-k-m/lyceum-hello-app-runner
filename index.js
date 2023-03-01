@@ -76,6 +76,11 @@ app.get("/query", (req, res) => {
   res.send(`クエリ: ${JSON.stringify(req.query)}`);
 });
 
+app.get("/query2", (req, res) => {
+  console.log(req.query);
+  res.send(`クエリ2: ${JSON.stringify(req.query)}`);
+});
+
 function handler1(req, res, next) {
   console.log("ハンドラー1 (応答返さない)");
   // req.startTime = Date.now();
