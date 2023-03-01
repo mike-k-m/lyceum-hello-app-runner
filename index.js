@@ -55,6 +55,22 @@ app.get("/cleaning", (req, res) => {
   });
 });
 
+app.get("/cleaning123", (req, res) => {
+  var filename = "cleaning.jpg";
+  var options = {
+    root: ".",
+    dotfiles: "deny",
+  };
+  res.sendFile(filename, options, (err) => {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log("Sent: ", filename);
+    }
+  });
+});
+
+
 app.get("/query", (req, res) => {
   console.log(req.query);
   res.send(`クエリ: ${JSON.stringify(req.query)}`);
